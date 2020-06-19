@@ -5,7 +5,7 @@
     <link>https://hanchao-zhang.github.io/post/</link>
       <atom:link href="https://hanchao-zhang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hanchao-zhang.github.io/images/icon_hu4b7d6a561d3ec3249b8edd16cd71f089_104323_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>A Machine Learning Algothrim for Removing the Outliers in Functional Data</title>
       <link>https://hanchao-zhang.github.io/post/fda/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://hanchao-zhang.github.io/post/fda/</guid>
       <description>&lt;h2 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h2&gt;
 &lt;p&gt;The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data. However, most of the literature focused on the detection of the extreme values in the functional data in a univariate case. For example, &lt;em&gt;Manuel Febrero Environmetrics 2008; 19: 331-345&lt;/em&gt; were focusing on the detection of extreme values that is abnormally large or small compared with the rest of the values. &lt;em&gt;Ana Arribas-Gil Biostatistics, Volume 15, Issue 4, October 2014&lt;/em&gt; were focusing on the detection of shape outliers (defined by different shape from the rest of the sample).
