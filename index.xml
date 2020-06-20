@@ -433,6 +433,18 @@ Three
     </item>
     
     <item>
+      <title>Open Case Study Project Working Group</title>
+      <link>https://hanchao-zhang.github.io/post/ocs/</link>
+      <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://hanchao-zhang.github.io/post/ocs/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The Open Case Studies project is an educational resource that educators can use in the classroom to teach students how to effectively derive knowledge from data in real-world challenges.&lt;/p&gt;
+&lt;h2 id=&#34;link-to-our-website&#34;&gt;Link to our website&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://opencasestudies.github.io/&#34;&gt;https://opencasestudies.github.io/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Data Mining and Statistical Learning Final Project</title>
       <link>https://hanchao-zhang.github.io/post/data-mining/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
@@ -511,6 +523,7 @@ $$Jac(A,B)=\frac{|A\bigcap B|}{|A\bigcup B|}$$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;LASSO.png&#34; alt=&#34;LASSO&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The Elastic net returns to the minimum cv error.&lt;/p&gt;
 &lt;h2 id=&#34;3-model-comparison&#34;&gt;3. Model Comparison&lt;/h2&gt;
+&lt;center&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -577,6 +590,7 @@ $$Jac(A,B)=\frac{|A\bigcap B|}{|A\bigcup B|}$$&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/center&gt;
 &lt;p&gt;The random Forest returns the best model with the lowest prediction error.&lt;/p&gt;
 &lt;p&gt;Compare to the paper. The prediction error is much smaller than the VFI5 method. However, the VFI5 method can categorize the result into 16 classes, it makes sense that VFI5 model has higher prediction error.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
@@ -2044,12 +2058,7 @@ which.min(err.rf)
       <link>https://hanchao-zhang.github.io/publication/preprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://hanchao-zhang.github.io/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description></description>
     </item>
     
   </channel>
