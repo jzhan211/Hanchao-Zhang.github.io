@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistical Inference II | Hanchao Zhang</title>
+    <link>/courses/statistical-inference-ii/</link>
+      <atom:link href="/courses/statistical-inference-ii/index.xml" rel="self" type="application/rss+xml" />
+    <description>Statistical Inference II</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu4b7d6a561d3ec3249b8edd16cd71f089_104323_512x512_fill_lanczos_center_2.png</url>
+      <title>Statistical Inference II</title>
+      <link>/courses/statistical-inference-ii/</link>
+    </image>
+    
+  </channel>
+</rss>
