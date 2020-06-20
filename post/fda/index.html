@@ -646,7 +646,7 @@
 <p>The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data. However, most of the literature focused on the detection of the extreme values in the functional data in a univariate case. For example, <em>Manuel Febrero Environmetrics 2008; 19: 331-345</em> were focusing on the detection of extreme values that is abnormally large or small compared with the rest of the values. <em>Ana Arribas-Gil Biostatistics, Volume 15, Issue 4, October 2014</em> were focusing on the detection of shape outliers (defined by different shape from the rest of the sample).
 Our method of outlier detection and imputation finds a way to detect the outlier due to the misfunction of the medical devices or detaching of the devices from the patients, which not necessarily produce extreme values or differences in shapes, but a graduate changes of the trend.</p>
 <p>Our method was inspired by real data acquired from the Intensive Care Unite. The data was generated from the medical device that attached to the patients&rsquo; hand or head and measured the oxygen level and carbon dioxide level during the CPR procedure.</p>
-<h2 id="2-obejective">2. Obejective</h2>
+<h2 id="2-objective">2. Objective</h2>
 <p>We proposed a voting method to detect different types of outliers in the real data. We then evaluate the algorithm using some simulated data.</p>
 <h2 id="3-types-of-the-outliers-in-the-real-data">3. Types of the outliers in the real data</h2>
 <p>Misfunction and detaching of the devices during the CPR may produce different kinds of outliers in terms of their shape, values, and trend. We attached some of the typical examples of the outliers in the real data.</p>
@@ -671,7 +671,7 @@ knitr::include_graphics(&quot;o8.png&quot;)
 </code></pre>
 <p>The two examples above show one type of unexpected jumps; some extreme values generated the jumps. These outliers are easy to detect using the window screening method (one of the models in the voting methods that we proposed). The voting method is similar to a k fold cross-validation. However, the validation set is not randomly selected but a preset number of consecutive points in the data.</p>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;o9.png&quot;)
-knitr::include_graphics(&quot;o10.png&quot;) 
+knitr::include_graphics(&quot;o10.png&quot;)
 </code></pre>
 <p>These two examples of the unexpected jumps due to a large number of outliers is different from the previous ones. The outliers that cause the jump are not extreme values but the value that gradually deviates away from the general trend. The left one has two unexpected peaks around the x-axis at - 1500 and -500. The right one has two unexpected peaks around the x-axis at - 400 and - 200.</p>
 <h2 id="4-voting-methods-to-detect-and-impute-the-outliers">4. Voting methods to detect and <strong>impute</strong> the outliers</h2>
@@ -737,16 +737,16 @@ knitr::include_graphics(&quot;o10.png&quot;)
 <p>We developed 7 different ways of imputation. Currently, we would prefer to impute the outliers with the fitted value of the newly fitted non-parametric splines using the data without outliers detected in the previous voting method.</p>
 <h2 id="6-result-of-the-voting-method">6. Result of the voting method</h2>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;r1.png&quot;)
-knitr::include_graphics(&quot;r2.png&quot;) 
+knitr::include_graphics(&quot;r2.png&quot;)
 </code></pre>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;r3.png&quot;)
-knitr::include_graphics(&quot;r4.png&quot;) 
+knitr::include_graphics(&quot;r4.png&quot;)
 </code></pre>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;r5.png&quot;)
-knitr::include_graphics(&quot;r6.png&quot;) 
+knitr::include_graphics(&quot;r6.png&quot;)
 </code></pre>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;r7.png&quot;)
-knitr::include_graphics(&quot;r8.png&quot;) 
+knitr::include_graphics(&quot;r8.png&quot;)
 </code></pre>
 <p>The first and second columns are the original data; the second and fourth columns are the one after applying the voting methods and imputing outliers using the imputation method mentioned above.</p>
 <p>In general, the voting methods removed the outliers and kept the trend we need in the functional data regression and other analyses using cumulated and aggregated measures of the values.</p>
@@ -755,13 +755,13 @@ knitr::include_graphics(&quot;r8.png&quot;)
 <p>We applied a logistic regression using survival as the outcome and mean oxygen level, APACHE score, CPR duration, and CPR derivatives as the predictor on the full data set and the processed data set, respectively.</p>
 <p>We evaluate the AUC using a 5 fold cross-validation. We repeat the 5 fold cross-validation 1000 times to obtain the empirical distribution of the estimated AUC.</p>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;e1.png&quot;)
-knitr::include_graphics(&quot;e2.png&quot;) 
+knitr::include_graphics(&quot;e2.png&quot;)
 </code></pre>
 <p>We were able to improve the mean of the AUC by 6 percent. However, outcome survival is a rare outcome, and AUC might not be able to give us a valid estimate.</p>
 <h3 id="72-auc-in-the-bootstrapped-original-and-smoothed-data-set-processed-by-the-voting-method">7.2 AUC in the bootstrapped original and smoothed data set (processed by the voting method)</h3>
 <p>Since the outcome survival is a rare event, we applied bootstrap on the dataset first to enlarge the size of the data to five times as the original data and then applied the same analysis to estimate the AUC</p>
 <pre><code class="language-{r,">knitr::include_graphics(&quot;e3.png&quot;)
-knitr::include_graphics(&quot;e4.png&quot;) 
+knitr::include_graphics(&quot;e4.png&quot;)
 </code></pre>
 <p>The bootstrapped sample also shows an increase in the accuracy after removing the outliers. The AUC was increased by 6% after removing outliers using our voting method.</p>
 <p>However, since it is a bootstrapped sample, the data used for fitting the model may appear in the validation dataset, the AUC is overestimated. We would like to purpose some other estimation of the prediction accuracy in the future to perform the analysis again.</p>
