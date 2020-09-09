@@ -5,12 +5,80 @@
     <link>https://hanchao-zhang.github.io/post/</link>
       <atom:link href="https://hanchao-zhang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hanchao-zhang.github.io/images/logo_hu8381da726ad9f494dd21781da8cda615_5579780_300x300_fit_lanczos_2.png</url>
       <title>Posts</title>
       <link>https://hanchao-zhang.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Adherence Calculation - Proportion of Days Covered (PDC)</title>
+      <link>https://hanchao-zhang.github.io/post/adherence/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://hanchao-zhang.github.io/post/adherence/</guid>
+      <description>&lt;h2 id=&#34;proportion-of-days-covered-pdc&#34;&gt;Proportion of days covered (PDC)&lt;/h2&gt;
+&lt;p&gt;Use to calculate the proportion of days covered&lt;/p&gt;
+&lt;p&gt;The function is called &lt;code&gt;pdc_cal&lt;/code&gt; and it is really easy to use.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df_pdc &amp;lt;- pdc_cal(data = df_simulated,
+                  ID = &#39;PatientID&#39;,
+                  Drug = &#39;Name.Drug&#39;,
+                  Fill.Date = &#39;Fill.Date&#39;,
+                  Days.Supplied = &#39;Days.Supplied&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can use your own dataset to calculate it, I also provided a sample simulation code. You can calculate the pdc using our sample simulation data.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;simuatedPDC.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;simulation&#34;&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;Just run following code to get the simulation dataset df_simulated and run the function above to calculate the proportion of days covered.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;
+N_Patients &amp;lt;- 1000
+
+PID &amp;lt;- sample(1:1000, N_Patients, replace = F)
+
+simulated_list &amp;lt;- list()
+for (i in 1:length(PID)) {
+  set.seed(PID[i] )
+  start_date &amp;lt;- sample(seq(as.Date(&#39;2018/01/01&#39;), as.Date(&#39;2020/01/01&#39;), by=&amp;quot;day&amp;quot;), 1)
+  days_supplied &amp;lt;- sample(c(30, 60, 90), 1)
+  fill.date &amp;lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+  simulated_list[[i]] &amp;lt;- data.frame(PatientID = PID[i],
+                           Name.Drug = &#39;XXX&#39;,
+                           Fill.Date = fill.date,
+                           Days.Supplied = days_supplied)
+  if( PID[i] %% 2 ==0 ){
+
+      start_date &amp;lt;- sample(seq(as.Date(&#39;2018/01/01&#39;), as.Date(&#39;2020/01/01&#39;), by=&amp;quot;day&amp;quot;), 1)
+      days_supplied &amp;lt;- sample(c(30, 60, 90), 1)
+      fill.date &amp;lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+      simulated_list[[i]] &amp;lt;- rbind(simulated_list[[i]],
+                                   data.frame(PatientID = PID[i],
+                                              Name.Drug = &#39;YYY&#39;,
+                                              Fill.Date = fill.date,
+                                              Days.Supplied = days_supplied))
+  }else if( PID[i] %% 3 ==0 ){
+
+
+      start_date &amp;lt;- sample(seq(as.Date(&#39;2018/01/01&#39;), as.Date(&#39;2020/01/01&#39;), by=&amp;quot;day&amp;quot;), 1)
+      days_supplied &amp;lt;- sample(c(30, 60, 90), 1)
+      fill.date &amp;lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+      simulated_list[[i]] &amp;lt;- rbind(simulated_list[[i]],
+                                   data.frame(PatientID = PID[i],
+                                              Name.Drug = &#39;ZZZ&#39;,
+                                              Fill.Date = fill.date,
+                                              Days.Supplied = days_supplied))    
+      }
+}
+
+df_simulated &amp;lt;- do.call(rbind, simulated_list)
+
+df_simulated
+
+write.csv(df_simulated, file = &#39;simulated.csv&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;sampleData.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A Machine Learning Algothrim for Removing the Outliers in Functional Data</title>

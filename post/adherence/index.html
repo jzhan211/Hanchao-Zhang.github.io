@@ -30,10 +30,12 @@
   
     
   
-  <meta name="description" content="1. Introduction The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data.">
+  <meta name="description" content="Proportion of days covered (PDC) Use to calculate the proportion of days covered
+The function is called pdc_cal and it is really easy to use.
+df_pdc &lt;- pdc_cal(data = df_simulated, ID = &#39;PatientID&#39;, Drug = &#39;Name.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://hanchao-zhang.github.io/post/fda/">
+  <link rel="alternate" hreflang="en-us" href="https://hanchao-zhang.github.io/post/adherence/">
 
   
 
@@ -250,7 +252,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu4b7d6a561d3ec3249b8edd16cd71f089_104323_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu4b7d6a561d3ec3249b8edd16cd71f089_104323_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://hanchao-zhang.github.io/post/fda/">
+  <link rel="canonical" href="https://hanchao-zhang.github.io/post/adherence/">
 
   
   
@@ -268,15 +270,17 @@
   <meta property="twitter:creator" content="@tedddddy_zhang">
   
   <meta property="og:site_name" content="Hanchao Zhang (张瀚潮)">
-  <meta property="og:url" content="https://hanchao-zhang.github.io/post/fda/">
-  <meta property="og:title" content="A Machine Learning Algothrim for Removing the Outliers in Functional Data | Hanchao Zhang (张瀚潮)">
-  <meta property="og:description" content="1. Introduction The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data."><meta property="og:image" content="https://hanchao-zhang.github.io/post/fda/featured.png">
-  <meta property="twitter:image" content="https://hanchao-zhang.github.io/post/fda/featured.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="https://hanchao-zhang.github.io/post/adherence/">
+  <meta property="og:title" content="Adherence Calculation - Proportion of Days Covered (PDC) | Hanchao Zhang (张瀚潮)">
+  <meta property="og:description" content="Proportion of days covered (PDC) Use to calculate the proportion of days covered
+The function is called pdc_cal and it is really easy to use.
+df_pdc &lt;- pdc_cal(data = df_simulated, ID = &#39;PatientID&#39;, Drug = &#39;Name."><meta property="og:image" content="https://hanchao-zhang.github.io/post/adherence/featured.png">
+  <meta property="twitter:image" content="https://hanchao-zhang.github.io/post/adherence/featured.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-03-20T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-09-08T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-03-20T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-09-08T00:00:00&#43;00:00">
   
 
   
@@ -300,16 +304,16 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://hanchao-zhang.github.io/post/fda/"
+    "@id": "https://hanchao-zhang.github.io/post/adherence/"
   },
-  "headline": "A Machine Learning Algothrim for Removing the Outliers in Functional Data",
+  "headline": "Adherence Calculation - Proportion of Days Covered (PDC)",
   
   "image": [
-    "https://hanchao-zhang.github.io/post/fda/featured.png"
+    "https://hanchao-zhang.github.io/post/adherence/featured.png"
   ],
   
-  "datePublished": "2020-03-20T00:00:00Z",
-  "dateModified": "2020-03-20T00:00:00Z",
+  "datePublished": "2020-09-08T00:00:00Z",
+  "dateModified": "2020-09-08T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -324,7 +328,7 @@
       "url": "https://hanchao-zhang.github.io/images/logo_hu8381da726ad9f494dd21781da8cda615_5579780_192x192_fit_lanczos_2.png"
     }
   },
-  "description": "1. Introduction The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data."
+  "description": "Proportion of days covered (PDC) Use to calculate the proportion of days covered\nThe function is called pdc_cal and it is really easy to use.\ndf_pdc \u0026lt;- pdc_cal(data = df_simulated, ID = 'PatientID', Drug = 'Name."
 }
 </script>
 
@@ -342,7 +346,7 @@
 
 
 
-  <title>A Machine Learning Algothrim for Removing the Outliers in Functional Data | Hanchao Zhang (张瀚潮)</title>
+  <title>Adherence Calculation - Proportion of Days Covered (PDC) | Hanchao Zhang (张瀚潮)</title>
 
 </head>
 
@@ -702,7 +706,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>A Machine Learning Algothrim for Removing the Outliers in Functional Data</h1>
+  <h1>Adherence Calculation - Proportion of Days Covered (PDC)</h1>
 
   
 
@@ -720,7 +724,7 @@
     
       
     
-    Fri, Mar 20, 2020
+    Tue, Sep 8, 2020
   </span>
   
 
@@ -729,7 +733,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 min read
+    2 min read
   </span>
   
 
@@ -768,45 +772,39 @@
 
 
   
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/files/post1.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/Hanchao-Zhang/calibration_and_discrimination_Functional_Data_Analysis" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
   
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/Hanchao-Zhang/AUC-FDA" target="_blank" rel="noopener">
-  Poster
-</a>
-
-
-
-
-
-
-
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/Hanchao-Zhang/Adherence-PDC" target="_blank" rel="noopener">
+    
+    R Package
+  </a>
 
 
 </div>
@@ -815,10 +813,10 @@
 </div>
 
 
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 504px;">
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 223px;">
   <div style="position: relative">
-    <img src="/post/fda/featured_hu9fb0d2c6ff6bb610c12577c72b180177_131924_720x0_resize_lanczos_2.png" alt="" class="featured-image">
-    <span class="article-header-caption">Image generated from: <a href="https://unsplash.com/photos/OGZtQF8iC0g"><strong>R version 3.6.3</strong></a></span>
+    <img src="/post/adherence/featured_hu8f9c21fe89af8b33f83806c748f26a3d_133967_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
   </div>
 </div>
 
@@ -827,135 +825,66 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="1-introduction">1. Introduction</h2>
-<p>The effects of outliers in the functional data analysis are well aware by statisticians in recent years, there have been some works of literature on finding outliers in the functional data. However, most of the literature focused on the detection of the extreme values in the functional data in a univariate case. For example, <em>Manuel Febrero Environmetrics 2008; 19: 331-345</em> were focusing on the detection of extreme values that is abnormally large or small compared with the rest of the values. <em>Ana Arribas-Gil Biostatistics, Volume 15, Issue 4, October 2014</em> were focusing on the detection of shape outliers (defined by different shape from the rest of the sample).
-Our method of outlier detection and imputation finds a way to detect the outlier due to the misfunction of the medical devices or detaching of the devices from the patients, which not necessarily produce extreme values or differences in shapes, but a graduate changes of the trend.</p>
-<p>Our method was inspired by real data acquired from the Intensive Care Unite. The data was generated from the medical device that attached to the patients&rsquo; hand or head and measured the oxygen level and carbon dioxide level during the CPR procedure.</p>
-<h2 id="2-objective">2. Objective</h2>
-<p>We proposed a voting method to detect different types of outliers in the real data. We then evaluate the algorithm using some simulated data.</p>
-<h2 id="3-types-of-the-outliers-in-the-real-data">3. Types of the outliers in the real data</h2>
-<p>Misfunction and detaching of the devices during the CPR may produce different kinds of outliers in terms of their shape, values, and trend. We attached some of the typical examples of the outliers in the real data.</p>
-<h3 id="31-consecutive-jumps-during-the-measuring-time">3.1 Consecutive jumps during the measuring time</h3>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;o1.png&quot;)
-knitr::include_graphics(&quot;o2.png&quot;)
+      <h2 id="proportion-of-days-covered-pdc">Proportion of days covered (PDC)</h2>
+<p>Use to calculate the proportion of days covered</p>
+<p>The function is called <code>pdc_cal</code> and it is really easy to use.</p>
+<pre><code class="language-r">df_pdc &lt;- pdc_cal(data = df_simulated,
+                  ID = 'PatientID',
+                  Drug = 'Name.Drug',
+                  Fill.Date = 'Fill.Date',
+                  Days.Supplied = 'Days.Supplied')
 </code></pre>
-<p>This kind of jump in the data is not the most common one but the one that is easiest to solve. Since there are only a few points that lie away from the trend of the data, we could simply remove it by fitting a non-parametric regression using kernel and splines, and then remove the points that at preset times away from the $\mu$ at that time point.</p>
-<h3 id="32-nonconsecutive-jumps-during-the-measuring-time">3.2 Nonconsecutive jumps during the measuring time</h3>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;o3.png&quot;)
-knitr::include_graphics(&quot;o4.png&quot;)
+<p>You can use your own dataset to calculate it, I also provided a sample simulation code. You can calculate the pdc using our sample simulation data.</p>
+<p><img src="simuatedPDC.png" alt=""></p>
+<h2 id="simulation">Simulation</h2>
+<p>Just run following code to get the simulation dataset df_simulated and run the function above to calculate the proportion of days covered.</p>
+<pre><code class="language-{r}">
+N_Patients &lt;- 1000
+
+PID &lt;- sample(1:1000, N_Patients, replace = F)
+
+simulated_list &lt;- list()
+for (i in 1:length(PID)) {
+  set.seed(PID[i] )
+  start_date &lt;- sample(seq(as.Date('2018/01/01'), as.Date('2020/01/01'), by=&quot;day&quot;), 1)
+  days_supplied &lt;- sample(c(30, 60, 90), 1)
+  fill.date &lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+  simulated_list[[i]] &lt;- data.frame(PatientID = PID[i],
+                           Name.Drug = 'XXX',
+                           Fill.Date = fill.date,
+                           Days.Supplied = days_supplied)
+  if( PID[i] %% 2 ==0 ){
+
+      start_date &lt;- sample(seq(as.Date('2018/01/01'), as.Date('2020/01/01'), by=&quot;day&quot;), 1)
+      days_supplied &lt;- sample(c(30, 60, 90), 1)
+      fill.date &lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+      simulated_list[[i]] &lt;- rbind(simulated_list[[i]],
+                                   data.frame(PatientID = PID[i],
+                                              Name.Drug = 'YYY',
+                                              Fill.Date = fill.date,
+                                              Days.Supplied = days_supplied))
+  }else if( PID[i] %% 3 ==0 ){
+
+
+      start_date &lt;- sample(seq(as.Date('2018/01/01'), as.Date('2020/01/01'), by=&quot;day&quot;), 1)
+      days_supplied &lt;- sample(c(30, 60, 90), 1)
+      fill.date &lt;- start_date + cumsum(sample( (days_supplied - sample(1:10, 1)):(days_supplied + sample(1:10, 1)), sample(1:20, 1), replace = T ))
+      simulated_list[[i]] &lt;- rbind(simulated_list[[i]],
+                                   data.frame(PatientID = PID[i],
+                                              Name.Drug = 'ZZZ',
+                                              Fill.Date = fill.date,
+                                              Days.Supplied = days_supplied))    
+      }
+}
+
+df_simulated &lt;- do.call(rbind, simulated_list)
+
+df_simulated
+
+write.csv(df_simulated, file = 'simulated.csv')
+
 </code></pre>
-<p>There are two examples of nonconsecutive jumps during the measuring time, which are more common ones in the real data. Both curves on the left and right show clear patterns of the trend. Even though the number of outliers is more than the first scenario, the general trends of the data were not corrupted by the outliers. The outliers can be found and detected by fitting smooth curve, such as a none-parametric spline with a small number of the knots, and applying the previous standard to remove the outliers</p>
-<h3 id="33-jumps-that-corrupt-the-trend-of-the-data">3.3 Jumps that corrupt the trend of the data</h3>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;o5.png&quot;)
-knitr::include_graphics(&quot;o6.png&quot;)
-</code></pre>
-<p>These kinds of jumps are the ones that hard to deal with. First of all, the true trend is hard to identify. Moreover, the observed values were all pretty far away from some expected value after fitting a smooth function.</p>
-<h3 id="34-unexpected-jumps-due-to-a-large-number-of-outliers">3.4 Unexpected jumps due to a large number of outliers</h3>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;o7.png&quot;)
-knitr::include_graphics(&quot;o8.png&quot;)
-</code></pre>
-<p>The two examples above show one type of unexpected jumps; some extreme values generated the jumps. These outliers are easy to detect using the window screening method (one of the models in the voting methods that we proposed). The voting method is similar to a k fold cross-validation. However, the validation set is not randomly selected but a preset number of consecutive points in the data.</p>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;o9.png&quot;)
-knitr::include_graphics(&quot;o10.png&quot;)
-</code></pre>
-<p>These two examples of the unexpected jumps due to a large number of outliers is different from the previous ones. The outliers that cause the jump are not extreme values but the value that gradually deviates away from the general trend. The left one has two unexpected peaks around the x-axis at - 1500 and -500. The right one has two unexpected peaks around the x-axis at - 400 and - 200.</p>
-<h2 id="4-voting-methods-to-detect-and-impute-the-outliers">4. Voting methods to detect and <strong>impute</strong> the outliers</h2>
-<h3 id="41-non-parametric-splines-1st-model-in-the-voting-methods">4.1 Non-parametric splines (1st model in the voting methods)</h3>
-<p>These are the methods that we can use to remove the outliers in the first two scenarios.</p>
-<ol>
-<li>
-<p>Fit a non-parametric spline with an arbitrary number of knots using the whole dataset $\mathcal{D}$</p>
-</li>
-<li>
-<p>Obtain the fitted value $y^*$ and the standard deviation $sd$ at each time points</p>
-</li>
-<li>
-<p>Index the outliers $\text{I}^{np}_k = ( |\hat y_k - y_k^*| &gt; n \times sd_k)$, $n$ is a arbitrary number, where $\hat y$ belongs to the observed dataset $\mathcal{D}$ and $k = 1,2,3, \cdots n$, and $n$ is the number of the observation in the dataset $\mathcal{D}$</p>
-</li>
-<li>
-<p>Calculate the reduced sum of the squares $MSE^{np} = \sum_{k=1}^n (\hat y - y^*)^2 \times I_k^{np}$</p>
-</li>
-</ol>
-<h3 id="42-window-process-2nd-model-in-the-voting-methods">4.2 Window process (2nd model in the voting methods)</h3>
-<ol>
-<li>
-<p>Create a vector $W$ that represents the length of windows that will be used in the window precess, $0 &lt; |W| &lt; n$(where n is the total observation in the data)</p>
-</li>
-<li>
-<p>Set the window length to $W_i$ ( where $0 &lt; i \le |W|$ ) and start a cross-validation like process</p>
-<p>2.0. create a vector $I_i^{wp}$ with all 0 in the vector, such that $|I_i| = n$</p>
-<p>2.1. removed the set of observation $\mathcal{A}$ from the whole dataset $\mathcal{D}$ and denote it as $\mathcal{D}<em>{ij}$, and denote the complementary set of $\mathcal{D}</em>{ij}$ as $\mathcal{D}<em>{ij}^c$, where $\mathcal{A} = {\omega:\omega \in[x_j,x</em>{j + W_i}] , x_k\in\mathcal{D}}$, and $k = 1,2,3, \cdots , n$</p>
-<p>2.2. fit a non-parametric spline using $\mathcal{D}<em>{ij}$, denote it as $\mathcal{M}</em>{ij}$</p>
-<p>2.3. predit the data $\mathcal{D}<em>{ij}^c$ using $\mathcal{M}</em>{ij}$, denote the predicted dataset as $\widetilde{\mathcal{D}_{ij}^c}$</p>
-<p>2.4. let $\hat y_k$ and $\tilde y_k$ are eletments in  $\mathcal{D}<em>{ij}$ and $\widetilde{\mathcal{D}</em>{ij}^c}$ respectively, let $sd_k$ represent the standard deviation for $\widetilde y_k$ and $I_{ij}^{wp}=I_{ij}^{wp}( |\hat y_k - \tilde y_k| &gt; n \times sd_k )$, where $k = 1,2,3, \cdots,j$</p>
-<p>2.5 repeat the step 2.1 to 2.4 until the end of the window approach the last observation</p>
-</li>
-<li>
-<p>calculate the reduced sum of squares $MSE^{wp}<em>i = \sum</em>{k=1}^j(\hat y_k - \tilde y_k)^2 I_{ik}$ where $k = 1,2,3, \cdots, j$</p>
-</li>
-<li>
-<p>Go back to step one and repeat for all preset window length and obtain the $MSE_i^{wp}$ and $I_i^{wp}$ for each window length $W_i \subset W$</p>
-</li>
-</ol>
-<h3 id="43-voting-mse-of-from-the-two-models-above">4.3 Voting MSE of from the two models above</h3>
-<p>The voting method is a combined method of the two previous models. By using the voting method, we can get the best parameter by grid searching, which was arbitrary in the previous step.</p>
-<p>For each length of the windows, we can compute a total reduced $MSE$ contructed by $MSE_1$, $MSE_2$, and $MSE_3$</p>
-<ol>
-<li>
-<p>We denote $\text{MSE}<em>{i1} = \frac{1}{2} \times ( \frac{ \sum</em>{k=1}^n (\hat y_k - y_k^*)^2 \times I_k^{np} \times I_{ik}^{wp} }{ \sum_{k=1}^n I_k^{np} \times I_{ik}^{wp}} + \frac{ \sum_{k=1}^n (\hat y_k - \tilde y_k)^2 \times I_k^{np} \times I_{ik}^{wp} }{ \sum_{k=1}^n I_k^{np} \times I_{ik}^{wp}})$</p>
-</li>
-<li>
-<p>Denote $\text{MSE}<em>{i2} = \frac{ \sum</em>{k=1}^n (\hat y_k - y_k^*)^2 \times I_k^{np} \times (1-I_{ik}^{wp}) }{ \sum_{k=1}^n I_k^{np} \times (1-I_{ik}^{wp})}$</p>
-</li>
-<li>
-<p>Denote $\text{MSE}<em>{i3} = \frac{ \sum</em>{k=1}^n (\hat y_k - \tilde y_k)^2 \times (1-I_k^{np}) \times I_{ik}^{wp} }{ \sum_{k=1}^n (1-I_k^{np}) \times I_{ik}^{wp}}$</p>
-</li>
-<li>
-<p>Calculate $\text{MSE}<em>i = \text{MSE}</em>{i1} - \text{MSE}<em>{i2} - \text{MSE}</em>{i3}$</p>
-</li>
-<li>
-<p>Repeat the step 1 to 4 for all window length, find the length that maxmized the $\text{MSE}$ as our preferred window length</p>
-</li>
-</ol>
-<p>We can also repeat the previous step for different non-parametric splines, and the one that maximized the $\text{MSE}$ will be used to detect the outliers.</p>
-<h2 id="5-imputation">5. Imputation</h2>
-<p>We developed 7 different ways of imputation. Currently, we would prefer to impute the outliers with the fitted value of the newly fitted non-parametric splines using the data without outliers detected in the previous voting method.</p>
-<h2 id="6-result-of-the-voting-method">6. Result of the voting method</h2>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;r1.png&quot;)
-knitr::include_graphics(&quot;r2.png&quot;)
-</code></pre>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;r3.png&quot;)
-knitr::include_graphics(&quot;r4.png&quot;)
-</code></pre>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;r5.png&quot;)
-knitr::include_graphics(&quot;r6.png&quot;)
-</code></pre>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;r7.png&quot;)
-knitr::include_graphics(&quot;r8.png&quot;)
-</code></pre>
-<p>The first and second columns are the original data; the second and fourth columns are the one after applying the voting methods and imputing outliers using the imputation method mentioned above.</p>
-<p>In general, the voting methods removed the outliers and kept the trend we need in the functional data regression and other analyses using cumulated and aggregated measures of the values.</p>
-<h2 id="7-improvement-in-prediction">7. Improvement in prediction</h2>
-<h3 id="71-auc-in-original-and-smoothed-data-set-processed-by-the-voting-method">7.1 AUC in original and smoothed data set (processed by the voting method)</h3>
-<p>We applied a logistic regression using survival as the outcome and mean oxygen level, APACHE score, CPR duration, and CPR derivatives as the predictor on the full data set and the processed data set, respectively.</p>
-<p>We evaluate the AUC using a 5 fold cross-validation. We repeat the 5 fold cross-validation 1000 times to obtain the empirical distribution of the estimated AUC.</p>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;e1.png&quot;)
-knitr::include_graphics(&quot;e2.png&quot;)
-</code></pre>
-<p>We were able to improve the mean of the AUC by 6 percent. However, outcome survival is a rare outcome, and AUC might not be able to give us a valid estimate.</p>
-<h3 id="72-auc-in-the-bootstrapped-original-and-smoothed-data-set-processed-by-the-voting-method">7.2 AUC in the bootstrapped original and smoothed data set (processed by the voting method)</h3>
-<p>Since the outcome survival is a rare event, we applied bootstrap on the dataset first to enlarge the size of the data to five times as the original data and then applied the same analysis to estimate the AUC</p>
-<pre><code class="language-{r,">knitr::include_graphics(&quot;e3.png&quot;)
-knitr::include_graphics(&quot;e4.png&quot;)
-</code></pre>
-<p>The bootstrapped sample also shows an increase in the accuracy after removing the outliers. The AUC was increased by 6% after removing outliers using our voting method.</p>
-<p>However, since it is a bootstrapped sample, the data used for fitting the model may appear in the validation dataset, the AUC is overestimated. We would like to purpose some other estimation of the prediction accuracy in the future to perform the analysis again.</p>
-<h2 id="8-future-works">8. Future works</h2>
-<h3 id="81-simulation">8.1 Simulation</h3>
-<p>To be finished, we purpose to simulate the functional data and the outlier generating process. We will apply the voting method on the simulated dataset to see if the method works well.</p>
-<h3 id="82-r-function-and-packages">8.2 R function and packages</h3>
-<p>I would like to wrap up the method and R function, and test the method on more simulation data and generalize this method in terms of more types of outlier detections.</p>
-<p>I would also like to see if there is any other way to improve the method on its computational efficiency.</p>
+<p><img src="sampleData.png" alt=""></p>
 
     </div>
 
@@ -979,7 +908,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://hanchao-zhang.github.io/post/fda/&amp;text=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://hanchao-zhang.github.io/post/adherence/&amp;text=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -992,7 +921,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://hanchao-zhang.github.io/post/fda/&amp;t=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://hanchao-zhang.github.io/post/adherence/&amp;t=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1005,7 +934,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="mailto:?subject=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data&amp;body=https://hanchao-zhang.github.io/post/fda/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29&amp;body=https://hanchao-zhang.github.io/post/adherence/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1018,7 +947,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://hanchao-zhang.github.io/post/fda/&amp;title=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://hanchao-zhang.github.io/post/adherence/&amp;title=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1031,7 +960,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="whatsapp://send?text=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data%20https://hanchao-zhang.github.io/post/fda/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29%20https://hanchao-zhang.github.io/post/adherence/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1044,7 +973,7 @@ knitr::include_graphics(&quot;e4.png&quot;)
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://hanchao-zhang.github.io/post/fda/&amp;title=A%20Machine%20Learning%20Algothrim%20for%20Removing%20the%20Outliers%20in%20Functional%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://hanchao-zhang.github.io/post/adherence/&amp;title=Adherence%20Calculation%20-%20Proportion%20of%20Days%20Covered%20%28PDC%29" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1208,15 +1137,8 @@ knitr::include_graphics(&quot;e4.png&quot;)
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/post/adherence/" rel="next">Adherence Calculation - Proportion of Days Covered (PDC)</a>
-  </div>
-  
-  
-  
-  <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/post/jointmodeling/" rel="prev">Paper Review Time-dependent ROCs and AUCs for censored endpoints, dynamic prediction via joint modeling and landmarking</a>
+    <a href="/post/fda/" rel="prev">A Machine Learning Algothrim for Removing the Outliers in Functional Data</a>
   </div>
   
 </div>
