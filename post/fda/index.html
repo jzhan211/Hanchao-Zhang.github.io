@@ -885,26 +885,12 @@ Our method of outlier detection and imputation finds a way to detect the outlier
 </li>
 <li>
 <p>Set the window length to $W_i$ ( where $0 &lt; i \le |W|$ ) and start a cross-validation like process</p>
-<ol>
-<li>
-<p>create a vector $I_i^{wp}$ with all 0 in the vector, such that $|I_i| = n$</p>
-</li>
-<li>
-<p>removed the set of observation $\mathcal{A}$ from the whole dataset $\mathcal{D}$ and denote it as $D_{ij}$, and denote the complementary set of $\mathcal{D}_{ij}$ as $\mathcal{D}_{ij}^c$, where $\mathcal{A} = {\omega:\omega \in[x_j,x_{j + W_i}] , x_k\in\mathcal{D}}$, and $k = 1,2,3, \cdots , n$</p>
-</li>
-<li>
-<p>fit a non-parametric spline using $D_{ij}$, denote it as $M_{ij}$</p>
-</li>
-<li>
-<p>predit the data $D_{ij}^c$ using $M_{ij}$, denote the predicted dataset as $\widetilde{D_{ij}^c}$</p>
-</li>
-<li>
-<p>let $\hat y_k$ and $\tilde y_k$ are eletments in  $D_{ij}$ and $\widetilde{D_{ij}^c}$ respectively, let $sd_k$ represent the standard deviation for $\widetilde y_k$ and $I_{ij}^{wp}=I_{ij}^{wp}( |\hat y_k - \tilde y_k| &gt; n \times sd_k )$, where $k = 1,2,3, \cdots,j$</p>
-</li>
-<li>
-<p>repeat the step 2.1 to 2.4 until the end of the window approach the last observation</p>
-</li>
-</ol>
+<p>2.0. create a vector $I_i^{wp}$ with all 0 in the vector, such that $|I_i| = n$</p>
+<p>2.1. removed the set of observation $\mathcal{A}$ from the whole dataset $\mathcal{D}$ and denote it as $D_{ij}$, and denote the complementary set of $\mathcal{D}_{ij}$ as $\mathcal{D}_{ij}^c$, where $\mathcal{A} = {\omega:\omega \in[x_j,x_{j + W_i}] , x_k\in\mathcal{D}}$, and $k = 1,2,3, \cdots , n$</p>
+<p>2.2. fit a non-parametric spline using $D_{ij}$, denote it as $M_{ij}$</p>
+<p>2.3. predit the data $D_{ij}^c$ using $M_{ij}$, denote the predicted dataset as $\widetilde{D_{ij}^c}$</p>
+<p>2.4. let $\hat y_k$ and $\tilde y_k$ are eletments in  $D_{ij}$ and $\widetilde{D_{ij}^c}$ respectively, let $sd_k$ represent the standard deviation for $\widetilde y_k$ and $I_{ij}^{wp}=I_{ij}^{wp}( |\hat y_k - \tilde y_k| &gt; n \times sd_k )$, where $k = 1,2,3, \cdots,j$</p>
+<p>2.5. repeat the step 2.1 to 2.4 until the end of the window approach the last observation</p>
 </li>
 <li>
 <p>calculate the reduced sum of squares $MSE_i^{wp} = \sum_{k=1}^j(\hat y_k - \tilde y_k)^2 I_{ik}$ where $k = 1,2,3, \cdots, j$</p>
